@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velox AI — AI Automation Agency | South Florida</title>
+<meta name="description" content="Velox AI builds custom AI-powered automations for South Florida businesses. Eliminate manual work, reduce costs, and scale smarter. Any industry. Results guaranteed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:      #080C12;
+  --dark:       #0C1420;
+  --dark2:      #111D2E;
+  --dark3:      #16243A;
+  --vel:        #C8102E;
+  --vel-mid:    #E8182E;
+  --vel-glow:   rgba(200,16,46,0.14);
+  --vel-soft:   rgba(200,16,46,0.08);
+  --gold:       #D4A017;
+  --gold-soft:  rgba(212,160,23,0.1);
+  --white:      #FFFFFF;
+  --off:        #F0F4F8;
+  --muted:      #7A90A8;
+  --body-text:  #A8BCCC;
+  --border:     rgba(255,255,255,0.07);
+  --card:       rgba(255,255,255,0.03);
+  --card-h:     rgba(255,255,255,0.055);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.68;
+  overflow-x: hidden;
+}
+
+/* ── UTILS ── */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+section { padding: 96px 0; }
+section.alt { background: var(--dark2); }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Syne', sans-serif;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 2.8px; text-transform: uppercase;
+  color: var(--vel-mid);
+  margin-bottom: 18px;
+}
+.eyebrow::before {
+  content: '';
+  width: 20px; height: 2px;
+  background: var(--vel-mid);
+  border-radius: 2px;
+}
+.sec-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 3.8vw, 46px);
+  font-weight: 800; line-height: 1.12; letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+.sec-sub { font-size: 17px; color: var(--body-text); font-weight: 300; max-width: 540px; line-height: 1.7; }
+.sec-head { margin-bottom: 60px; }
+.sec-head.center { text-align: center; }
+.sec-head.center .sec-sub { margin: 0 auto; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  background: rgba(8,12,18,0.94);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px; max-width: 1120px; margin: 0 auto; padding: 0 32px;
+}
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-v {
+  width: 36px; height: 36px;
+  background: var(--vel);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800; color: white;
+  letter-spacing: -1px;
+  box-shadow: 0 4px 20px rgba(200,16,46,0.4);
+}
+.logo-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800; color: var(--white);
+  letter-spacing: -0.3px;
+}
+.logo-name em { font-style: normal; color: var(--vel-mid); }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  color: var(--body-text); font-size: 14px; text-decoration: none;
+  font-weight: 400; transition: color .2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--vel); color: white !important;
+  padding: 10px 22px; border-radius: 7px;
+  font-size: 14px; font-weight: 600;
+  transition: background .2s, transform .15s, box-shadow .2s !important;
+}
+.nav-cta:hover {
+  background: var(--vel-mid) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(200,16,46,0.35) !important;
+}
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; display: block; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 130px 0 80px; position: relative; overflow: hidden;
+}
+.hero-bg1 {
+  position: absolute; pointer-events: none;
+  top: -150px; right: -250px;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(200,16,46,0.1) 0%, transparent 60%);
+}
+.hero-bg2 {
+  position: absolute; pointer-events: none;
+  bottom: -100px; left: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(212,160,23,0.06) 0%, transparent 60%);
+}
+/* Angled accent line */
+.hero-line {
+  position: absolute; top: 0; right: 180px;
+  width: 1px; height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(200,16,46,0.25), transparent);
+  pointer-events: none;
+}
+.hero-line2 {
+  position: absolute; top: 0; right: 340px;
+  width: 1px; height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(200,16,46,0.1), transparent);
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 2; max-width: 780px; }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--vel-soft);
+  border: 1px solid rgba(200,16,46,0.25);
+  border-radius: 100px;
+  padding: 7px 16px 7px 10px;
+  margin-bottom: 36px;
+}
+.htag-dot { width: 7px; height: 7px; background: var(--vel-mid); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+.htag-text { font-size: 13px; color: var(--body-text); font-weight: 400; }
+.htag-text strong { color: var(--vel-mid); font-weight: 600; }
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(44px, 7vw, 82px);
+  font-weight: 800; line-height: 1.04;
+  letter-spacing: -2px; margin-bottom: 28px;
+}
+h1 .red { color: var(--vel-mid); }
+h1 .stroke {
+  -webkit-text-stroke: 2px rgba(255,255,255,0.25);
+  color: transparent;
+}
+.hero-desc {
+  font-size: 19px; color: var(--body-text); font-weight: 300;
+  max-width: 580px; margin-bottom: 44px; line-height: 1.7;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.btn-red {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--vel); color: white;
+  padding: 15px 32px; border-radius: 8px;
+  font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 700;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: background .2s, transform .15s, box-shadow .2s;
+}
+.btn-red:hover {
+  background: var(--vel-mid);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(200,16,46,0.35);
+}
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--body-text); font-size: 15px;
+  text-decoration: none; padding: 15px 4px;
+  transition: color .2s;
+}
+.btn-outline:hover { color: var(--white); }
+
+/* Promo pill */
+.hero-promo {
+  margin-top: 56px; display: inline-flex; align-items: center; gap: 14px;
+  background: rgba(212,160,23,0.08);
+  border: 1px solid rgba(212,160,23,0.28);
+  border-radius: 10px; padding: 16px 22px;
+  max-width: 530px;
+}
+.promo-pill {
+  background: var(--gold); color: #110a00;
+  font-family: 'Syne', sans-serif;
+  font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 4px; white-space: nowrap;
+}
+.promo-copy { font-size: 14px; color: var(--body-text); line-height: 1.5; }
+.promo-copy strong { color: var(--white); font-weight: 500; }
+
+/* ── MARQUEE ── */
+.ticker {
+  background: rgba(200,16,46,0.06);
+  border-top: 1px solid rgba(200,16,46,0.15);
+  border-bottom: 1px solid rgba(200,16,46,0.15);
+  overflow: hidden; padding: 13px 0;
+}
+.ticker-track { display: flex; width: max-content; animation: tick 40s linear infinite; }
+.ticker-item {
+  padding: 0 40px; font-size: 12.5px; font-weight: 500;
+  color: var(--muted); white-space: nowrap;
+  display: flex; align-items: center; gap: 12px;
+}
+.ticker-item::after { content: '✦'; color: var(--vel); font-size: 8px; opacity: .7; }
+@keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── PAIN ── */
+.pain-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+}
+@media(max-width:800px){ .pain-grid { grid-template-columns: 1fr; } }
+.pain-card {
+  background: var(--dark); padding: 36px 30px;
+  transition: background .2s;
+}
+.pain-card:hover { background: var(--dark3); }
+.pain-icon { font-size: 26px; margin-bottom: 16px; }
+.pain-q {
+  font-family: 'Syne', sans-serif;
+  font-size: 14.5px; font-weight: 700; line-height: 1.4;
+  color: var(--white); margin-bottom: 10px;
+  font-style: italic;
+}
+.pain-q::before { content: '"'; color: var(--vel-mid); font-size: 22px; line-height: 0; vertical-align: -5px; margin-right: 2px; }
+.pain-a { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+/* ── HOW IT WORKS ── */
+.steps-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+@media(max-width:900px){ .steps-row { grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; } }
+@media(max-width:500px){ .steps-row { grid-template-columns: 1fr; } }
+.steps-row::before {
+  content: '';
+  position: absolute; top: 28px; left: 10%; right: 10%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--vel), transparent);
+  opacity: .35;
+}
+.step-box {
+  padding: 36px 26px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin: 0 8px;
+  position: relative;
+  transition: border-color .25s, background .2s;
+}
+.step-box:hover { border-color: rgba(200,16,46,0.3); background: var(--card-h); }
+@media(max-width:900px){ .step-box { border-radius: 0; margin: 0; border: none; background: var(--dark); } }
+.step-num {
+  width: 50px; height: 50px;
+  background: var(--vel-soft);
+  border: 1px solid rgba(200,16,46,0.3);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 800; color: var(--vel-mid);
+  margin-bottom: 20px; position: relative; z-index: 2;
+}
+.step-box h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.step-box p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+.step-time {
+  display: inline-block; margin-top: 14px;
+  font-size: 11px; color: var(--vel-mid); font-weight: 600; letter-spacing: .5px;
+}
+
+/* ── SERVICES ── */
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media(max-width:800px){ .svc-grid { grid-template-columns: 1fr; } }
+.svc-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 36px 30px;
+  display: flex; flex-direction: column;
+  transition: border-color .25s, transform .2s;
+}
+.svc-box:hover { border-color: rgba(200,16,46,0.3); transform: translateY(-4px); }
+.svc-box.hero-svc { border-color: var(--vel); background: rgba(200,16,46,0.05); }
+.svc-top-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--vel-mid); margin-bottom: 20px;
+}
+.svc-box.hero-svc .svc-top-tag { color: var(--gold); }
+.svc-title { font-family: 'Syne', sans-serif; font-size: 21px; font-weight: 800; margin-bottom: 8px; }
+.svc-price {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px; font-weight: 800;
+  color: var(--vel-mid); line-height: 1; margin-bottom: 4px;
+}
+.svc-box.hero-svc .svc-price { color: var(--gold); }
+.svc-price-detail { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+.svc-desc { font-size: 14px; color: var(--body-text); line-height: 1.65; margin-bottom: 22px; flex: 1; }
+.svc-perks { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.svc-perks li { font-size: 13px; color: var(--body-text); display: flex; align-items: flex-start; gap: 9px; }
+.svc-perks li::before { content: '✓'; color: var(--vel-mid); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.svc-box.hero-svc .svc-perks li::before { color: var(--gold); }
+.svc-btn {
+  display: block; text-align: center;
+  margin-top: 26px; padding: 12px;
+  border: 1px solid rgba(200,16,46,0.4); border-radius: 7px;
+  font-size: 14px; font-weight: 600; font-family: 'Syne', sans-serif;
+  color: var(--vel-mid); text-decoration: none;
+  transition: all .2s;
+}
+.svc-btn:hover { background: var(--vel); color: white; border-color: var(--vel); }
+.svc-box.hero-svc .svc-btn { background: var(--gold); color: #110a00; border-color: var(--gold); }
+.svc-box.hero-svc .svc-btn:hover { background: #e0aa1a; }
+.audit-promo {
+  margin-top: 14px; padding: 12px 14px;
+  background: var(--gold-soft);
+  border: 1px solid rgba(212,160,23,0.25);
+  border-radius: 7px;
+  font-size: 12.5px; color: var(--body-text); line-height: 1.55;
+}
+.audit-promo strong { color: var(--gold); }
+
+/* ── BUILDS ── */
+.builds-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media(max-width:900px){ .builds-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:500px){ .builds-grid { grid-template-columns: 1fr; } }
+.build-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 11px; padding: 22px 18px;
+  transition: border-color .2s, background .2s;
+}
+.build-card:hover { border-color: rgba(200,16,46,0.3); background: var(--card-h); }
+.build-card .bi { font-size: 24px; margin-bottom: 10px; }
+.build-card h4 { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.build-card p { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
+/* ── WHY ── */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media(max-width:800px){ .why-grid { grid-template-columns: 1fr 1fr; } }
+@media(max-width:500px){ .why-grid { grid-template-columns: 1fr; } }
+.why-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; padding: 28px 24px;
+  transition: border-color .2s;
+}
+.why-card:hover { border-color: rgba(200,16,46,0.25); }
+.why-n {
+  font-family: 'Syne', sans-serif;
+  font-size: 36px; font-weight: 800;
+  -webkit-text-stroke: 1.5px rgba(200,16,46,0.3);
+  color: transparent; line-height: 1; margin-bottom: 14px;
+}
+.why-card h4 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.why-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+/* ── FAQ ── */
+.faq-wrap { max-width: 780px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-btn {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0; text-align: left;
+  color: var(--white); font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  transition: color .2s; gap: 16px;
+}
+.faq-btn:hover { color: var(--vel-mid); }
+.faq-btn.open { color: var(--vel-mid); }
+.faq-icon { font-size: 22px; color: var(--vel-mid); transition: transform .25s; flex-shrink: 0; }
+.faq-btn.open .faq-icon { transform: rotate(45deg); }
+.faq-body { display: none; padding: 0 0 22px; font-size: 14px; color: var(--muted); line-height: 1.75; }
+.faq-body.open { display: block; }
+
+/* ── TEAM ── */
+.team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media(max-width:640px){ .team-grid { grid-template-columns: 1fr; } }
+.team-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; padding: 40px 34px;
+  transition: border-color .25s;
+}
+.team-card:hover { border-color: rgba(200,16,46,0.28); }
+.team-av {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--vel), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 800; color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 24px rgba(200,16,46,0.3);
+}
+.team-card h3 { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; margin-bottom: 3px; }
+.team-role { font-size: 12px; color: var(--vel-mid); font-weight: 600; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 18px; }
+.team-card p { font-size: 14px; color: var(--body-text); line-height: 1.7; margin-bottom: 22px; }
+.team-facts { display: flex; flex-direction: column; gap: 8px; }
+.tf { font-size: 13px; color: var(--body-text); display: flex; gap: 9px; }
+.tf::before { content: '→'; color: var(--vel-mid); flex-shrink: 0; }
+
+/* ── CTA STRIP ── */
+.cta-strip {
+  background: var(--vel);
+  padding: 64px 0; text-align: center; position: relative; overflow: hidden;
+}
+.cta-strip::before {
+  content: 'VELOX';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-family: 'Syne', sans-serif; font-size: 200px; font-weight: 800;
+  color: rgba(255,255,255,0.06); white-space: nowrap; pointer-events: none;
+  line-height: 1;
+}
+.cta-strip h2 { font-family: 'Syne', sans-serif; font-size: clamp(26px,4vw,44px); font-weight: 800; margin-bottom: 12px; position: relative; letter-spacing: -0.3px; }
+.cta-strip p { font-size: 17px; color: rgba(255,255,255,0.75); margin-bottom: 32px; font-weight: 300; position: relative; }
+.gold-note {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px; padding: 12px 20px;
+  font-size: 14px; font-weight: 500; color: white;
+  margin-bottom: 28px; position: relative;
+}
+.gold-note strong { color: var(--gold); }
+.btn-white {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: white; color: var(--vel);
+  padding: 15px 32px; border-radius: 8px;
+  font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 800;
+  text-decoration: none; position: relative;
+  transition: background .2s, transform .15s, box-shadow .2s;
+}
+.btn-white:hover { background: var(--off); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,0.25); }
+
+/* ── CONTACT ── */
+#contact { background: var(--dark2); }
+.contact-layout { display: grid; grid-template-columns: 1fr 1.15fr; gap: 64px; align-items: start; }
+@media(max-width:800px){ .contact-layout { grid-template-columns: 1fr; gap: 44px; } }
+.contact-left h2 { font-family: 'Syne', sans-serif; font-size: clamp(26px,3.5vw,40px); font-weight: 800; margin-bottom: 14px; letter-spacing: -.3px; line-height: 1.15; }
+.contact-left p { font-size: 15px; color: var(--body-text); line-height: 1.7; margin-bottom: 30px; }
+.contact-promises { display: flex; flex-direction: column; gap: 13px; }
+.cp { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--body-text); }
+.cp-dot { width: 7px; height: 7px; background: var(--vel-mid); border-radius: 50%; flex-shrink: 0; }
+
+.form-box {
+  background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+  border-radius: 18px; padding: 38px 34px;
+}
+.form-box h3 { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 5px; }
+.form-note-sub { font-size: 13px; color: var(--muted); margin-bottom: 26px; }
+.promo-bar {
+  background: var(--gold-soft); border: 1px solid rgba(212,160,23,0.28);
+  border-radius: 7px; padding: 11px 14px;
+  font-size: 12.5px; color: var(--body-text); margin-bottom: 18px; line-height: 1.55;
+}
+.promo-bar strong { color: var(--gold); }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fg { margin-bottom: 14px; }
+label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+input, select, textarea {
+  width: 100%; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 7px; padding: 11px 14px;
+  color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 14px;
+  outline: none; transition: border-color .2s, background .2s; -webkit-appearance: none;
+}
+input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.18); }
+input:focus, select:focus, textarea:focus { border-color: var(--vel); background: rgba(200,16,46,0.05); }
+select option { background: var(--dark); }
+textarea { resize: vertical; min-height: 95px; }
+.submit {
+  width: 100%; background: var(--vel); color: white;
+  border: none; padding: 15px;
+  border-radius: 8px; font-family: 'Syne', sans-serif;
+  font-size: 15px; font-weight: 800; cursor: pointer;
+  transition: background .2s, transform .15s, box-shadow .2s;
+  margin-top: 6px;
+}
+.submit:hover { background: var(--vel-mid); transform: translateY(-2px); box-shadow: 0 10px 35px rgba(200,16,46,0.35); }
+.form-fine { font-size: 12px; color: var(--muted); text-align: center; margin-top: 12px; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+}
+.foot-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.foot-brand { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 800; }
+.foot-brand span { color: var(--vel-mid); }
+.foot-domain { font-size: 13px; color: var(--muted); }
+.foot-right { font-size: 13px; color: var(--muted); text-align: right; }
+
+/* ── REVEAL ── */
+.rv { opacity: 0; transform: translateY(26px); transition: opacity .65s ease, transform .65s ease; }
+.rv.in { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: fixed; top: 70px; left: 0; right: 0;
+    background: var(--dark); padding: 24px 32px 32px;
+    gap: 20px; border-bottom: 1px solid var(--border); z-index: 299;
+  }
+  .hamburger { display: flex; }
+  section { padding: 68px 0; }
+  .frow { grid-template-columns: 1fr; }
+  .steps-row::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="logo">
+      <div class="logo-v">V</div>
+      <span class="logo-name">Velox <em>AI</em></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#pain">Pain Points</a>
+      <a href="#services">Services</a>
+      <a href="#builds">What We Build</a>
+      <a href="#faq">FAQ</a>
+      <a href="#team">Team</a>
+      <a href="#contact" class="nav-cta">Get Started</a>
+    </div>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-bg1"></div>
+  <div class="hero-bg2"></div>
+  <div class="hero-line"></div>
+  <div class="hero-line2"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="htag-dot"></span>
+        <span class="htag-text"><strong>AI Automation Agency</strong> &nbsp;·&nbsp; South Florida &nbsp;·&nbsp; veloxai.agency</span>
+      </div>
+      <h1>Your business,<br><span class="red">faster.</span><br><span class="stroke">Smarter.</span> Done.</h1>
+      <p class="hero-desc">
+        Velox AI builds custom AI-powered automations that eliminate the manual work holding your team back — so you can scale without adding headcount. Any business. Any industry. South Florida.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-red">
+          Book an Audit
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how" class="btn-outline">
+          See how it works
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-promo">
+        <span class="promo-pill">New Client Offer</span>
+        <p class="promo-copy"><strong>50% off your first Automation Audit.</strong> Get a full workflow analysis and ROI roadmap at half price. Mention this offer when you reach out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Lead Nurture Automation</span>
+    <span class="ticker-item">CRM Integration</span>
+    <span class="ticker-item">Document Processing</span>
+    <span class="ticker-item">AI Content Pipelines</span>
+    <span class="ticker-item">Invoice & Billing Automation</span>
+    <span class="ticker-item">Appointment Scheduling</span>
+    <span class="ticker-item">Automated Reporting</span>
+    <span class="ticker-item">Customer Service Triage</span>
+    <span class="ticker-item">Data Entry Elimination</span>
+    <span class="ticker-item">Email Workflow Automation</span>
+    <span class="ticker-item">Multi-System Integration</span>
+    <span class="ticker-item">AI Voice & Content Workflows</span>
+    <span class="ticker-item">Lead Nurture Automation</span>
+    <span class="ticker-item">CRM Integration</span>
+    <span class="ticker-item">Document Processing</span>
+    <span class="ticker-item">AI Content Pipelines</span>
+    <span class="ticker-item">Invoice & Billing Automation</span>
+    <span class="ticker-item">Appointment Scheduling</span>
+    <span class="ticker-item">Automated Reporting</span>
+    <span class="ticker-item">Customer Service Triage</span>
+    <span class="ticker-item">Data Entry Elimination</span>
+    <span class="ticker-item">Email Workflow Automation</span>
+    <span class="ticker-item">Multi-System Integration</span>
+    <span class="ticker-item">AI Voice & Content Workflows</span>
+  </div>
+</div>
+
+<!-- ══ PAIN POINTS ══ -->
+<section id="pain">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <div class="eyebrow">Sound Familiar?</div>
+      <h2 class="sec-title">Questions every business owner is asking right now</h2>
+      <p class="sec-sub">These are the real concerns we hear every week — and we have a specific, honest answer for every one.</p>
+    </div>
+    <div class="pain-grid rv">
+      <div class="pain-card">
+        <div class="pain-icon">🤔</div>
+        <div class="pain-q">How do I know where AI actually fits in my business without wasting money?</div>
+        <div class="pain-a">Our Automation Audit maps exactly where AI fits — and where it doesn't — before you spend anything beyond the audit itself. You leave with a clear ROI picture, not a sales pitch.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">⏰</div>
+        <div class="pain-q">My team wastes hours every week on tasks that follow the same pattern every time.</div>
+        <div class="pain-a">That's your #1 automation opportunity. We find it, put a dollar figure on it, and show you exactly how to get those hours back.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔌</div>
+        <div class="pain-q">Our tools don't talk to each other. We copy and paste between systems all day long.</div>
+        <div class="pain-a">We build the connections. One integrated workflow replaces hours of manual data transfer — every single week, forever.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💰</div>
+        <div class="pain-q">Is there a way to see the ROI before committing to a big project?</div>
+        <div class="pain-a">Yes — that's exactly what the Audit is for. Every audit ends with a specific projection: hours saved × team size × hourly rate = your annual return.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔒</div>
+        <div class="pain-q">I'm not comfortable with my company's sensitive data going into an AI system.</div>
+        <div class="pain-a">Encrypted API connections only. We never store your data on our servers. An NDA is signed as standard on every engagement — before anything is discussed.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">👥</div>
+        <div class="pain-q">My team resists new tools. How do I get them to actually use this?</div>
+        <div class="pain-a">Every project includes a change management plan and team training. We position your people as the experts who run the automation — not the ones replaced by it.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section id="how" class="alt">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <div class="eyebrow">The Process</div>
+      <h2 class="sec-title">Simple. Structured. Fast.</h2>
+      <p class="sec-sub">From first conversation to a live automation — without disrupting your team or your operations.</p>
+    </div>
+    <div class="steps-row rv">
+      <div class="step-box">
+        <div class="step-num">01</div>
+        <h3>Discovery Call</h3>
+        <p>We ask the right questions about your biggest workflow bottlenecks. Honest conversation — no sales pressure. We qualify the opportunity before recommending anything.</p>
+        <span class="step-time">30 minutes · Free</span>
+      </div>
+      <div class="step-box">
+        <div class="step-num">02</div>
+        <h3>Automation Audit</h3>
+        <p>We map your workflows, identify your top 3 automation opportunities, and deliver a prioritized ROI roadmap. Specific numbers. Clear recommendations. No commitment to build required.</p>
+        <span class="step-time">5–7 business days</span>
+      </div>
+      <div class="step-box">
+        <div class="step-num">03</div>
+        <h3>We Build It</h3>
+        <p>Our technical team designs, builds, and tests your custom automation. You review at key milestones — we handle everything else. Agile delivery, no surprises.</p>
+        <span class="step-time">3–8 weeks</span>
+      </div>
+      <div class="step-box">
+        <div class="step-num">04</div>
+        <h3>Launch & Handoff</h3>
+        <p>We go live, train your team, and monitor for 30 days — included. Full plain-English documentation provided. You own everything we build. No lock-in. Ever.</p>
+        <span class="step-time">30-day monitoring included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES & PRICING ══ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <div class="eyebrow">Services & Pricing</div>
+      <h2 class="sec-title">Three ways to work with Velox AI</h2>
+      <p class="sec-sub">Start where it makes sense. Most clients begin with an Audit — it pays for itself.</p>
+    </div>
+    <div class="svc-grid rv">
+      <!-- Tier 1 -->
+      <div class="svc-box">
+        <div class="svc-top-tag">Tier 1 · Entry Point</div>
+        <div class="svc-title">Automation Audit</div>
+        <div class="svc-price">$1,500<span style="font-size:17px;font-weight:400;color:var(--muted)"> – $3,000</span></div>
+        <div class="svc-price-detail">One-time · Delivered in 5–7 business days</div>
+        <div class="svc-desc">Map your workflows, identify your top 3 automation opportunities, and receive a clear ROI roadmap — before committing to any build.</div>
+        <ul class="svc-perks">
+          <li>Full workflow mapping session</li>
+          <li>Top 3 opportunities ranked by ROI</li>
+          <li>Specific dollar projections per opportunity</li>
+          <li>Prioritized build roadmap</li>
+          <li>No build commitment required</li>
+        </ul>
+        <a href="#contact" class="svc-btn">Book an Audit</a>
+        <div class="audit-promo">
+          🎯 <strong>50% off for new clients.</strong> Book your first Audit at half price — mention this offer when you reach out.
+        </div>
+      </div>
+      <!-- Tier 2 -->
+      <div class="svc-box hero-svc">
+        <div class="svc-top-tag">Tier 2 · Most Requested</div>
+        <div class="svc-title">Custom Build</div>
+        <div class="svc-price">$5,000<span style="font-size:17px;font-weight:400;color:var(--muted)"> – $25,000</span></div>
+        <div class="svc-price-detail">Project-based · 3–8 weeks</div>
+        <div class="svc-desc">End-to-end design, build, and launch of your AI-powered workflow. Any process, any industry, built on open platforms you'll own forever.</div>
+        <ul class="svc-perks">
+          <li>Custom workflow design & architecture</li>
+          <li>Full technical build & QA</li>
+          <li>Client testing & approval rounds</li>
+          <li>Team training at launch</li>
+          <li>30-day post-launch monitoring</li>
+          <li>Plain-English documentation included</li>
+        </ul>
+        <a href="#contact" class="svc-btn">Get a Quote</a>
+      </div>
+      <!-- Tier 3 -->
+      <div class="svc-box">
+        <div class="svc-top-tag">Tier 3 · Ongoing Partnership</div>
+        <div class="svc-title">AI Ops Retainer</div>
+        <div class="svc-price">$2,500<span style="font-size:17px;font-weight:400;color:var(--muted)"> – $8,000</span></div>
+        <div class="svc-price-detail">Per month · 3-month minimum</div>
+        <div class="svc-desc">We become your embedded AI operations team — ongoing builds, optimization, performance reporting, and strategic advising every month.</div>
+        <ul class="svc-perks">
+          <li>1–2 new workflow builds per month</li>
+          <li>Monthly performance reports</li>
+          <li>Continuous optimization</li>
+          <li>Strategic AI advisory</li>
+          <li>Priority response & support</li>
+        </ul>
+        <a href="#contact" class="svc-btn">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHAT WE BUILD ══ -->
+<section id="builds" class="alt">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <div class="eyebrow">What We Build</div>
+      <h2 class="sec-title">Common automations across any industry</h2>
+      <p class="sec-sub">If your team does it manually on a recurring basis, there's a strong chance we can automate it.</p>
+    </div>
+    <div class="builds-grid rv">
+      <div class="build-card"><div class="bi">📥</div><h4>Lead Nurture Pipeline</h4><p>Automatic follow-up from first contact to close — no leads go cold.</p></div>
+      <div class="build-card"><div class="bi">📄</div><h4>Document Processing</h4><p>Intake, classify, extract data, and route any document type automatically.</p></div>
+      <div class="build-card"><div class="bi">📊</div><h4>Automated Reporting</h4><p>Live data pulled and formatted into reports on your schedule — zero manual work.</p></div>
+      <div class="build-card"><div class="bi">🔗</div><h4>CRM Integration</h4><p>Connect your CRM to every other tool — data entry and alerting automated.</p></div>
+      <div class="build-card"><div class="bi">📅</div><h4>Appointment Scheduling</h4><p>Book, confirm, remind, and reschedule without a human touching it.</p></div>
+      <div class="build-card"><div class="bi">🧾</div><h4>Invoice & Billing</h4><p>Send, follow up, and flag overdue accounts without manual effort.</p></div>
+      <div class="build-card"><div class="bi">🎙️</div><h4>AI Content Pipelines</h4><p>Posts, emails, or summaries generated and scheduled automatically.</p></div>
+      <div class="build-card"><div class="bi">💬</div><h4>Customer Service Triage</h4><p>Route, respond to, and escalate inbound inquiries without a human queue.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Why Velox AI</div>
+      <h2 class="sec-title">Operators, not consultants</h2>
+      <p class="sec-sub">We've built and scaled companies ourselves. We know what actually works — and what doesn't.</p>
+    </div>
+    <div class="why-grid rv">
+      <div class="why-card"><div class="why-n">01</div><h4>Real systems, not slides</h4><p>We demo working AI automations we built ourselves in the first meeting — running live in production. Not presentations about what's theoretically possible.</p></div>
+      <div class="why-card"><div class="why-n">02</div><h4>We speak business, not tech</h4><p>Our founders have 20+ years building and scaling companies. We design automations that fit your real operations — not what looks impressive in a case study.</p></div>
+      <div class="why-card"><div class="why-n">03</div><h4>Projects always run on time</h4><p>Agile delivery methodology on every engagement. Clear milestones, regular demos, no surprises. You always know exactly where your project stands.</p></div>
+      <div class="why-card"><div class="why-n">04</div><h4>You own everything we build</h4><p>Built on open platforms — n8n, Make.com, Zapier, Airtable. Plain-English documentation on every workflow. Any developer can maintain it. No lock-in, ever.</p></div>
+      <div class="why-card"><div class="why-n">05</div><h4>ROI shown before you commit</h4><p>We project the return before you approve any build. If we can't show a clear ROI case, we say so upfront — and save you the money.</p></div>
+      <div class="why-card"><div class="why-n">06</div><h4>South Florida local</h4><p>Same time zone. Same business community. Same events. We are your neighbors — not a remote agency billing Miami prices from elsewhere.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="sec-title">Questions we hear all the time</h2>
+      <p class="sec-sub">Straight answers — no fluff.</p>
+    </div>
+    <div class="faq-wrap rv">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faq(this)">What exactly is an Automation Audit and what do I get? <span class="faq-icon">+</span></button>
+        <div class="faq-body">A 5–7 business day engagement where we map your workflows, identify your top 3 automation opportunities, and deliver a written report with a prioritized ROI roadmap. You receive: a process map of your current workflows, the top 3 opportunities ranked by ROI, specific dollar projections, and a recommended build sequence. There is no obligation to proceed with a build after the audit.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faq(this)">How much does a typical project cost? <span class="faq-icon">+</span></button>
+        <div class="faq-body">Our Automation Audit starts at $1,500 — currently 50% off for new clients. Custom build projects range from $5,000 to $25,000 depending on the number of workflows, integrations, and complexity. Monthly retainers range from $2,500 to $8,000. Every proposal includes a specific ROI projection so you can evaluate the return before committing to anything.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faq(this)">How long does it take to build and launch an automation? <span class="faq-icon">+</span></button>
+        <div class="faq-body">Most projects go live within 3–8 weeks from a signed agreement. Simple single-workflow automations can be live in 2–3 weeks. More complex multi-system integrations take 6–8 weeks. The audit phase (5–7 days) happens before any build begins and is separate.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faq(this)">Is my data safe? What goes into the AI systems? <span class="faq-icon">+</span></button>
+        <div class="faq-body">Your data goes directly to the AI provider (such as Anthropic or OpenAI) via encrypted API calls — the same way data is transmitted to any SaaS platform you already use. We never store your data on our servers. We provide a written data handling policy before any project begins, and we sign an NDA on every engagement as standard practice.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faq(this)">What if our needs change after the automation is built? <span class="faq-icon">+</span></button>
+        <div class="faq-body">Everything we build is on open, industry-standard platforms (n8n, Make.com, Zapier, Airtable) with full plain-English documentation. If your process changes, we update the workflow — that's included in retainer plans. On project-only engagements, updates are billed as a straightforward change order. You are never locked in or dependent solely on us.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faq(this)">Do you work with businesses in any industry? <span class="faq-icon">+</span></button>
+        <div class="faq-body">Yes — any business in South Florida, any industry. If your team has repetitive manual processes, disconnected tools, or workflows that could run faster and more reliably, we can help. We've worked with service businesses, retail, real estate, healthcare admin, professional services, and more.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faq(this)">What if my team doesn't adopt the new automation? <span class="faq-icon">+</span></button>
+        <div class="faq-body">Adoption is built into every delivery. Each project includes a change management plan, a team training session, and a 30-day monitored rollout. We build dashboards that show your team exactly what the automation is doing. We position your team as the experts who run and own the system — not the people it's replacing.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faq(this)">What does the 50% off Audit offer include? <span class="faq-icon">+</span></button>
+        <div class="faq-body">New clients receive 50% off their first Automation Audit — bringing the starting price from $1,500 down to $750. The full deliverable is identical: workflow mapping session, top 3 automation opportunities with ROI projections, and a prioritized roadmap. Just mention the offer when you reach out and we apply the discount to your proposal automatically.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ══ -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head center rv">
+      <div class="eyebrow">The Founders</div>
+      <h2 class="sec-title">Built by people who've done it before</h2>
+      <p class="sec-sub">Twenty years of building companies together. No guesswork on compatibility — just execution.</p>
+    </div>
+    <div class="team-grid rv">
+      <div class="team-card">
+        <div class="team-av">JD</div>
+        <h3>Javier Dalmau</h3>
+        <div class="team-role">Co-Founder & CEO</div>
+        <p>Entrepreneur with 20+ years scaling digital businesses from zero. Javier brings revenue, relationships, and hands-on AI automation experience to every client engagement — having personally built and deployed live AI pipelines before founding Velox AI.</p>
+        <div class="team-facts">
+          <div class="tf">Founder, BIGSTAR TV — 18 brands, 1B+ device households</div>
+          <div class="tf">Founder, 305 Partners LLC — scaled to 200+ field agents</div>
+          <div class="tf">Active AI pipeline builder: n8n, Claude API, ElevenLabs</div>
+          <div class="tf">BBA, University of Miami</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-av">EM</div>
+        <h3>Erik Marum</h3>
+        <div class="team-role">Co-Founder & COO</div>
+        <p>Agile delivery veteran and technical operator. Erik brings the project management discipline, delivery rigor, and deep technical contractor network that turns automation concepts into shipped, working products — on time and on scope.</p>
+        <div class="team-facts">
+          <div class="tf">COO, BIGSTAR TV — 13 years scaling operations & tech</div>
+          <div class="tf">Agile Delivery Coach, Norwegian Cruise Line Holdings</div>
+          <div class="tf">Advisory Board Member, BWG Strategy LLC</div>
+          <div class="tf">Extensive network in AI engineering & software development</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA STRIP ══ -->
+<div class="cta-strip">
+  <div class="wrap" style="position:relative">
+    <div class="eyebrow" style="color:rgba(255,255,255,0.6);margin-bottom:14px">
+      <span style="background:rgba(255,255,255,0.3)"></span>Limited Offer
+    </div>
+    <h2>Ready to see what AI can do for your business?</h2>
+    <p>Book your Automation Audit and get a clear, honest picture of your opportunities.</p>
+    <div>
+      <div class="gold-note">
+        <span>🎯</span>
+        <span><strong>50% off your first Audit</strong> — just mention it when you reach out.</span>
+      </div>
+    </div>
+    <br>
+    <a href="#contact" class="btn-white">
+      Book My Audit Now
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-layout">
+      <div class="contact-left rv">
+        <div class="eyebrow">Get In Touch</div>
+        <h2>Let's talk about<br>your business</h2>
+        <p>Tell us about your biggest manual bottlenecks. We'll set up a 30-minute conversation — no pitch, no pressure. Just an honest talk about what's possible.</p>
+        <div class="contact-promises">
+          <div class="cp"><span class="cp-dot"></span>We respond within one business day</div>
+          <div class="cp"><span class="cp-dot"></span>30-minute discovery call, no hard sell</div>
+          <div class="cp"><span class="cp-dot"></span>Audit proposal delivered same day</div>
+          <div class="cp"><span class="cp-dot"></span>NDA signed before any details are shared</div>
+          <div class="cp"><span class="cp-dot"></span>50% off your first Audit — just ask</div>
+        </div>
+      </div>
+      <div class="form-box rv">
+        <h3>Start the conversation</h3>
+        <p class="form-note-sub">We respond within one business day.</p>
+        <div class="promo-bar">
+          🎯 <strong>New client offer: 50% off your first Automation Audit.</strong> We'll apply the discount automatically when you reach out.
+        </div>
+        <div class="frow">
+          <div>
+            <label>First Name</label>
+            <input type="text" id="fn" placeholder="First name">
+          </div>
+          <div>
+            <label>Last Name</label>
+            <input type="text" placeholder="Last name">
+          </div>
+        </div>
+        <div class="fg">
+          <label>Company Name</label>
+          <input type="text" placeholder="Your business name">
+        </div>
+        <div class="fg">
+          <label>Email Address</label>
+          <input type="email" id="em" placeholder="you@yourbusiness.com">
+        </div>
+        <div class="fg">
+          <label>Your Role</label>
+          <select>
+            <option value="" disabled selected>Select your title</option>
+            <option>Business Owner / CEO</option>
+            <option>COO / VP Operations</option>
+            <option>Marketing Director / CMO</option>
+            <option>Office Manager / Director of Ops</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>What's your biggest manual bottleneck?</label>
+          <textarea placeholder="e.g. We manually enter data between our CRM and billing system every day — it takes 2 hours..."></textarea>
+        </div>
+        <button class="submit" onclick="go()">Send My Inquiry →</button>
+        <p class="form-fine">We respond within one business day. No spam, ever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div>
+        <div class="foot-brand">Velox <span>AI</span></div>
+        <div class="foot-domain" style="margin-top:4px">veloxai.agency</div>
+      </div>
+      <div class="foot-right">
+        <div>© 2026 Velox AI. All rights reserved.</div>
+        <div style="margin-top:4px">📍 Miami, Florida &nbsp;·&nbsp; South Florida</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+// Stagger grid children
+['pain-grid','steps-row','svc-grid','builds-grid','why-grid','team-grid'].forEach(cls => {
+  document.querySelectorAll(`.${cls} > *`).forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.075}s`;
+  });
+});
+
+// FAQ
+function faq(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-btn').forEach(b => {
+    b.classList.remove('open');
+    b.nextElementSibling.classList.remove('open');
+  });
+  if (!isOpen) { btn.classList.add('open'); body.classList.add('open'); }
+}
+
+// Nav
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// Close nav on link click
+document.querySelectorAll('#navLinks a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+
+// Form
+function go() {
+  const fn = document.getElementById('fn').value.trim();
+  const em = document.getElementById('em').value.trim();
+  if (!fn || !em) { alert('Please enter your name and email to continue.'); return; }
+  const btn = document.querySelector('.submit');
+  btn.textContent = '✓ Received! We\'ll be in touch within one business day.';
+  btn.style.background = '#1A7A4A';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>
